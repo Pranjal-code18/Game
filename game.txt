@@ -1,0 +1,43 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+class Game{
+    private int guess;
+     int n,r,a;
+    public Game(){
+    }
+    public int takeInput(){
+        return n;
+    }
+    public int getGuess(int guess){
+        return guess;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+	Game g = new Game();
+        Random rand = new Random();
+        int r= rand.nextInt(100);
+        int guess=0;
+        while(guess<=10){
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println(g.takeInput());
+	    if(n>r) {
+            System.out.println("YOU ENTERED NO GREATER THAN COMPUTER , SORRY PLEASE CHOOSE DIFFERENT ONE");
+        }
+            //if(n<r)System.out.println("YOU ENTERED NO GREATER THAN COMPUTER , SORRY PLEASE CHOOSE DIFFERENT ONE");
+            else if(n<r)
+            {
+                System.out.println("YOU ENTERED NO SMALLER THAN COMPUTER , SORRY PLEASE CHOOSE DIFFERENT ONE");
+            }
+            else{
+            System.out.println("YOU CAUGHT COMPUTER NUMBER HURRAHHHH!!!!!!!!!!!!!");
+            break;
+        }
+          guess=guess+1;
+    }
+        System.out.println("you caught in:" +g.getGuess(guess+1) + "chance");
+        System.out.println("Number choosen by computer is :" +r);
+    }
+}
